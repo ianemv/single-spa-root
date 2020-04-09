@@ -3,9 +3,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = env => ({
-  entry: path.resolve(__dirname, "src/root-config"),
+  entry: path.resolve(__dirname, "src/single-spa-root"),
   output: {
-    filename: "root-config.js",
+    filename: "ian-test-single-spa-root.js",
     libraryTarget: "system",
     path: path.resolve(__dirname, "dist")
   },
@@ -23,7 +23,7 @@ module.exports = env => ({
   devServer: {
     historyApiFallback: true,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Origin": "*"
     },
     disableHostCheck: true
   },
@@ -32,7 +32,7 @@ module.exports = env => ({
       inject: false,
       template: "src/index.ejs",
       templateParameters: {
-        isLocal: env && env.isLocal === 'true'
+        isLocal: env && env.isLocal === "true"
       }
     }),
     new CleanWebpackPlugin()
