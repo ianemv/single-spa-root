@@ -3,7 +3,7 @@ import * as isActive from "./activity-functions";
 
 registerApplication(
   "@ian/app",
-  () => System.import("@ian-test/ian-test"),
+  () => System.import("@ian-test/single-spa"),
   isActive.navbar
 );
 
